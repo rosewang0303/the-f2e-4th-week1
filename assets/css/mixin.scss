@@ -1,8 +1,4 @@
-/*
-    mixin.scss
-*/
-
-// media query: break point
+// rwd: break point
 @mixin screenMD {
     @media screen and (max-width: $breakpoint-md){
         @content;
@@ -14,8 +10,14 @@
     }
 }
 
-// text
+/*
+    text stroke
+
+    @param color: storke color (default: $secondary)
+    @param width: stroke width (default: 3px)
+*/
 @mixin textStroke($color: $secondary, $width: 3px) {
+    z-index: 0;
     &::before {
         content: attr(data-storke);
         position: absolute;

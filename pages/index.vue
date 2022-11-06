@@ -1,6 +1,6 @@
 <template>
   <div class="index">
-    <div class="text" data-storke="index 測試">index 測試</div>
+    <span class="text" data-storke="index 測試">index 測試</span>
   </div>
 </template>
 
@@ -14,6 +14,8 @@ export default {
   // index
   .index {
     font-family: 'Cubic';
+    background-color: $black;
+    color: $white;
     @include screenMD {
     }
     @include screenSM {
@@ -21,7 +23,6 @@ export default {
     .text {
       font-size: 36px;
       line-height: 42px;
-      color: $white;
       @include textStroke();
     }
   }
