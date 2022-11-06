@@ -1,0 +1,26 @@
+/*
+    mixin.scss
+*/
+
+// media query: break point
+@mixin screenMD {
+    @media screen and (max-width: $breakpoint-md){
+        @content;
+    }
+}
+@mixin screenSM {
+    @media screen and (max-width: $breakpoint-sm){
+        @content;
+    }
+}
+
+// text
+@mixin textStroke($color: $secondary, $width: 3px) {
+    &::before {
+        content: attr(data-storke);
+        position: absolute;
+        z-index: -1;
+        -webkit-text-stroke: $width $color;
+        text-stroke: $width $color;
+    }
+}

@@ -27,6 +27,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    '@nuxtjs/style-resources', // import style file
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -39,6 +40,13 @@ export default {
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: '/',
+  },
+  
+  // Style
+  styleResources: {
+    scss: [
+      '~/assets/css/main.scss',
+    ],
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
