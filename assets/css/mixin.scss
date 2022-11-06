@@ -1,4 +1,9 @@
 // rwd: break point
+@mixin screenLG {
+    @media screen and (max-width: $breakpoint-lg){
+        @content;
+    }
+}
 @mixin screenMD {
     @media screen and (max-width: $breakpoint-md){
         @content;
@@ -24,5 +29,71 @@
         z-index: -1;
         -webkit-text-stroke: $width $color;
         text-stroke: $width $color;
+    }
+}
+
+// align
+@mixin flexCenterH {
+    display: flex;
+    align-items: center;
+}
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// button
+button {
+    cursor: pointer;
+    font-family: 'Cubic';
+}
+@mixin buttonSM {
+    width: 104px;
+    height: 35px;
+    @include flexCenter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    background-color: $white;
+    color: $primary;
+    &:hover {
+        &:before,
+        &:after {
+            content: '';
+            background-color: $tertiary;
+            display: block;
+            position: absolute;
+            transition: 0.5s all ease;
+        }
+        &:before {
+            left: -5px;
+            top: -2.5px;
+            width: 5px;
+            height: 100%;
+            transform: skewY(45deg);
+        }
+        &:after {
+            left: -2.5px;
+            top: -5px;
+            width: 100%;
+            height: 5px;
+            transform: skewX(45deg);
+        }
+    }
+    &:active {
+        background-color: $secondary;
+        &:before,
+        &:after {
+            display: none;
+        }
+    }
+    &:focus {
+        background-color: $white;
+        color: $secondary;
+    }
+    &:disabled {
+        background-color: $light-gray;
+        color: white;
     }
 }

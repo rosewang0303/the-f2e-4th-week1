@@ -1,6 +1,7 @@
 <template>
   <div class="index">
-    <span class="text" data-storke="index 測試">index 測試</span>
+    <!-- <span class="text" data-storke="index 測試">index 測試</span> -->
+    <Navbar />
   </div>
 </template>
 
@@ -11,19 +12,18 @@ export default {
 </script>
 
 <style lang="scss">
-  // index
   .index {
     font-family: 'Cubic';
     background-color: $black;
     color: $white;
+    @include screenLG {
+    }
     @include screenMD {
     }
-    @include screenSM {
-    }
-    .text {
-      font-size: 36px;
-      line-height: 42px;
-      @include textStroke();
-    }
+    // .text {
+    //   font-size: 36px;
+    //   line-height: 42px;
+    //   @include textStroke();
+    // }
   }
 </style>
