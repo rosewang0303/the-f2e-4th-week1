@@ -7,6 +7,8 @@
     <Navbar />
     <Main />
     <Trouble />
+    <!-- TODO mountain -->
+    <Stage />
   </div>
 </template>
 

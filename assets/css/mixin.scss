@@ -48,14 +48,11 @@ button {
     cursor: pointer;
     font-family: 'Cubic';
 }
-@mixin buttonSM {
-    width: 104px;
-    height: 35px;
+@mixin button {
     @include flexCenter;
-    font-size: 0.16rem;
-    line-height: 0.19rem;
     background-color: $white;
     color: $primary;
+    @content;
     &:hover {
         transform: translate(5px, 5px);
         &:before,
@@ -93,6 +90,22 @@ button {
     &:disabled {
         background-color: $light-gray;
         color: white;
+    }
+}
+@mixin buttonSM {
+    @include button {
+        width: 104px;
+        height: 35px;
+        font-size: 0.16rem;
+        line-height: 0.19rem;
+    }
+}
+@mixin buttonLG {
+    @include button {
+        width: 307px;
+        height: 65px;
+        font-size: 0.36rem;
+        line-height: 0.42rem;
     }
 }
 
