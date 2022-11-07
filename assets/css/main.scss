@@ -14,3 +14,17 @@
 .fade-leave-to {
     opacity: 0;
 }
+
+/* rwd */
+.container {
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+    @include screenLG {
+        padding-left: 2.43%;
+        padding-right: 2.43%;
+    }
+    @include screenMD {
+        padding-left: 3.26%;
+        padding-right: 3.26%;
+    }
+}

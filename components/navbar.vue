@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar">
+  <nav class="navbar container">
     <div class="left">
       <ul>
         <li>
@@ -44,18 +44,16 @@ export default {
 <style lang="scss">
   .navbar {
     background-color: $primary;
-    padding: 10px 12.5%; // container
     @include flexCenterH;
     justify-content: flex-end;
-    @include screenLG {
-      padding: 10px 2.43%; // container
-    }
+    // container
+    padding-top: 10px;
+    padding-bottom: 10px;
     @include screenMD {
-      padding: 10px 3.26%; // container
       justify-content: space-between;
     }
     @include screenSM {
-
+      // TODO
     }
     ul {
       @include flexCenterH;
@@ -78,7 +76,7 @@ export default {
       button {
         @include buttonSM;
       }
-      li {
+      a {
         &:first-child {
           margin-right: 10px;
         }
