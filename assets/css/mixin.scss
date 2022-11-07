@@ -58,6 +58,7 @@ button {
     background-color: $white;
     color: $primary;
     &:hover {
+        transform: translate(5px, 5px);
         &:before,
         &:after {
             content: '';
@@ -81,19 +82,34 @@ button {
             transform: skewX(45deg);
         }
     }
-    &:active {
-        background-color: $secondary;
+    &:focus {
+        background-color: $white;
+        color: $secondary;
+        transform: translate(0px, 0px);
         &:before,
         &:after {
             display: none;
         }
     }
-    &:focus {
-        background-color: $white;
-        color: $secondary;
-    }
     &:disabled {
         background-color: $light-gray;
         color: white;
+    }
+}
+
+/* animation */
+
+// text typing
+@keyframes typing {
+    from { width: 0 }
+}
+@mixin animateTyping($width: 6, $loop: true) {
+    width: #{$width}em;
+    overflow: hidden;
+    white-space: nowrap;
+    @if $loop == true {
+        animation: typing 3s steps($width * 2) infinite;
+    } @else {
+        animation: typing 3s steps($width * 2);
     }
 }
