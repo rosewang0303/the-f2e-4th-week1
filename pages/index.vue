@@ -6,6 +6,7 @@
     </Transition>
     <Navbar />
     <Main />
+    <Trouble />
   </div>
 </template>
 
