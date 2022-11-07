@@ -10,9 +10,14 @@
           <div class="stage__tag">#版塊設計</div>
           <div class="stage__flag-wrap">
             <div class="stage__line"></div>
-            <div class="stage__flag"></div>
+            <div
+              class="stage__flag"
+              :class="{ 'stage__flag--active': currentView === 0 }"
+            ></div>
           </div>
-          <button>查看關卡細節</button>
+          <a href="https://2022.thef2e.com/news/week1" target="_blank">
+            <button>查看關卡細節</button>
+          </a>
         </div>
       </div>
       <div class="stage__view">
@@ -23,9 +28,14 @@
           <div class="stage__subtitle">canvas</div>
           <div class="stage__tag">#凱鈿行動科技</div>
           <div class="stage__flag-wrap">
-            <div class="stage__flag"></div>
+            <div
+              class="stage__flag"
+              :class="{ 'stage__flag--active': currentView === 1 }"
+            ></div>
           </div>
-          <button>查看關卡細節</button>
+          <a href="https://2022.thef2e.com/news/week2" target="_blank">
+            <button>查看關卡細節</button>
+          </a>
         </div>
       </div>
       <div class="stage__view">
@@ -36,16 +46,21 @@
           <div class="stage__subtitle">JS draggable</div>
           <div class="stage__tag">#鈦坦科技</div>
           <div class="stage__flag-wrap">
-            <div class="stage__flag"></div>
+            <div
+              class="stage__flag"
+              :class="{ 'stage__flag--active': currentView === 2 }"
+            ></div>
           </div>
-          <button>查看關卡細節</button>
+          <a href="https://2022.thef2e.com/news/week3" target="_blank">
+            <button>查看關卡細節</button>
+          </a>
         </div>
       </div>
       <div class="stage__tank-wrap">
         <img
           class="stage__tank"
           src="@/assets/img/tank_1.gif"
-          :style="`transform: translateX(${tankPosition}px)`"
+          :style="`transform: translateX(${tankPosition}vw)`"
         />
       </div>
     </div>
@@ -59,6 +74,7 @@ export default {
   data() {
     return {
       tankPosition: 0,
+      currentView: 0,
     }
   },
 
@@ -74,8 +90,11 @@ export default {
 
   methods: {
     scrollHandler() {
-      this.tankPosition = this.$refs.stageWrap.scrollLeft;
-
+      const scrollLeft = this.$refs.stageWrap.scrollLeft;
+      const screenWidth = window.screen.width;
+      const viewWidth = screenWidth / 3;
+      this.currentView = parseInt(scrollLeft / viewWidth) === 3 ? 2 : parseInt(scrollLeft / viewWidth);
+      this.tankPosition = this.currentView * 100;
     },
   },
 }
@@ -188,7 +207,9 @@ export default {
       position: absolute;
       left: 50%;
       transform: translateX(-50%) scale(calc(140.8 / 1920 * 10));
-      animation: spriteFlag 1s steps(4) infinite;
+      &--active {
+        animation: spriteFlag 1s steps(4) infinite both;
+      }
       @keyframes spriteFlag {
         from { background-position: 0px; }
         to { background-position: -563.2px; }
