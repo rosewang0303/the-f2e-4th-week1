@@ -68,11 +68,11 @@ export default {
       justify-content: space-between;
       margin-top: 24px;
       li {
-        font-size: 36px;
-        line-height: 42px;
+        font-size: 0.36rem;
+        line-height: 0.42rem;
         @include screenMD {
-          font-size: 24px;
-          line-height: 28px;
+          font-size: 0.24rem;
+          line-height: 0.28rem;
         }
       }
     }
@@ -108,16 +108,16 @@ export default {
         .text {
           cursor: pointer;
           display: block;
-          font-size: 42px;
-          line-height: 49px;
+          font-size: 0.42rem;
+          line-height: 0.49rem;
           color: $white;
           margin-left: 42px;
           width: 30%;
           white-space: nowrap;
           @include screenMD {
             margin-left: 34px;
-            font-size: 36px;
-            line-height: 42px;
+            font-size: 0.36rem;
+            line-height: 0.42rem;
             width: 40%;
           }
           @include screenSM {
@@ -140,14 +140,14 @@ export default {
       }
     }
     &__subtitle {
-      font-size: 36px;
-      line-height: 42px;
+      font-size: 0.36rem;
+      line-height: 0.42rem;
       text-align: center;
       margin-top: 103px;
       @include screenMD {
         margin-top: 225px;
-        font-size: 24px;
-        line-height: 28px;
+        font-size: 0.24rem;
+        line-height: 0.28rem;
       }
     }
   }

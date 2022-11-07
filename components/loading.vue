@@ -35,19 +35,19 @@ export default {
       width: 50%;
     }
     &__text {
-      font-size: 36px;
-      line-height: 42px;
-      color: $white;
-      margin-bottom: 31px;
+      margin-bottom: 0.31rem;
       @include flexCenter;
       text-align: center;
       div {
+        font-size: 0.36rem;
+        line-height: 0.42rem;
+        color: $white;
         @include animateTyping();
       }
     }
     img {
-      width: 164px;
-      height: 66px;
+      width: 1.64rem;
+      height: 0.66rem;
       margin: 0 auto;
     }
   }

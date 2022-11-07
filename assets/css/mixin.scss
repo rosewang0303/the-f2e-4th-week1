@@ -52,9 +52,8 @@ button {
     width: 104px;
     height: 35px;
     @include flexCenter;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 0.16rem;
+    line-height: 0.19rem;
     background-color: $white;
     color: $primary;
     &:hover {
@@ -103,8 +102,8 @@ button {
 @keyframes typing {
     from { width: 0 }
 }
-@mixin animateTyping($width: 6, $loop: true) {
-    width: #{$width}em;
+@mixin animateTyping($width: 3, $loop: true) {
+    width: #{$width}rem;
     overflow: hidden;
     white-space: nowrap;
     @if $loop == true {

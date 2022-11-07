@@ -18,16 +18,12 @@
       <ul>
         <a href="https://2022.thef2e.com/signup" target="_blank">
           <li>
-            <button>
-              <span>註冊報名</span>
-            </button>
+            <button>註冊報名</button>
           </li>
         </a>
         <a href="https://2022.thef2e.com/login" target="_blank">
           <li>
-            <button>
-              <span>登入</span>
-            </button>
+            <button>登入</button>
           </li>
         </a>
       </ul>
@@ -61,8 +57,8 @@ export default {
     li {
       cursor: pointer;
       color: $secondary;
-      font-size: 16px;
-      line-height: 19px;
+      font-size: 0.16rem;
+      line-height: 0.19rem;
       &:hover {
         color: $white;
       }
