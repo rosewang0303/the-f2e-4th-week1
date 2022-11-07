@@ -93,7 +93,10 @@ export default {
       const scrollLeft = this.$refs.stageWrap.scrollLeft;
       const screenWidth = window.screen.width;
       const viewWidth = screenWidth / 3;
-      this.currentView = parseInt(scrollLeft / viewWidth) === 3 ? 2 : parseInt(scrollLeft / viewWidth);
+      this.currentView = parseInt(scrollLeft / viewWidth);
+      if (this.currentView >= 3) {
+        this.currentView = 2;
+      }
       this.tankPosition = this.currentView * 100;
     },
   },
