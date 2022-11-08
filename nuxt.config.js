@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'f2e-4th-week01',
+    title: 'The F2E 活動網站設計(The F2E 4th Week01)',
     htmlAttrs: {
       lang: 'en',
     },
