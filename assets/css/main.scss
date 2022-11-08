@@ -9,9 +9,9 @@
     @include screenLG {
         font-size: 80px;
     }
-    @include screenMD {
-        font-size: 60px;
-    }
+    // @include screenMD {
+    //     font-size: 60px;
+    // }
     @include screenSM {
         font-size: 50px;
     }

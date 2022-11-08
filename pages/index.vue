@@ -9,6 +9,7 @@
     <Trouble />
     <!-- TODO mountain -->
     <Stage />
+    <Faq />
   </div>
 </template>
 
