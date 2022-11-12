@@ -11,6 +11,7 @@
     <Stage />
     <Faq />
     <Firm />
+    <Footer />
   </div>
 </template>
 
