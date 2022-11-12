@@ -27,6 +27,24 @@
 .fade-leave-to {
     opacity: 0;
 }
+// flag
+@keyframes flag {
+    0% {
+      background-image: url("@/assets/img/flag_1.png");
+    }
+    25% {
+      background-image: url("@/assets/img/flag_1.png");
+    }
+    50% {
+      background-image: url("@/assets/img/flag_2.png");
+    }
+    75% {
+      background-image: url("@/assets/img/flag_3.png");
+    }
+    100% {
+      background-image: url("@/assets/img/flag_4.png");
+    }
+  }
 
 /* rwd */
 .container {

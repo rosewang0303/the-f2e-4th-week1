@@ -9,6 +9,7 @@
     <Trouble />
     <!-- TODO mountain -->
     <Stage />
+    <Event />
     <Faq />
     <Firm />
     <Footer />

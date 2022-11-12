@@ -12,7 +12,7 @@
             <div class="stage__line"></div>
             <div
               class="stage__flag"
-              :class="{ 'stage__flag--active': currentView >= 0 }"
+              :class="{ 'stage__flag--active': currentStep >= 0 }"
             ></div>
           </div>
           <a href="https://2022.thef2e.com/news/week1" target="_blank">
@@ -30,7 +30,7 @@
           <div class="stage__flag-wrap">
             <div
               class="stage__flag"
-              :class="{ 'stage__flag--active': currentView >= 1 }"
+              :class="{ 'stage__flag--active': currentStep >= 1 }"
             ></div>
           </div>
           <a href="https://2022.thef2e.com/news/week2" target="_blank">
@@ -48,7 +48,7 @@
           <div class="stage__flag-wrap">
             <div
               class="stage__flag"
-              :class="{ 'stage__flag--active': currentView >= 2 }"
+              :class="{ 'stage__flag--active': currentStep >= 2 }"
             ></div>
           </div>
           <a href="https://2022.thef2e.com/news/week3" target="_blank">
@@ -74,7 +74,7 @@ export default {
   data() {
     return {
       tankPosition: 0,
-      currentView: 0,
+      currentStep: 0,
     }
   },
 
@@ -93,11 +93,11 @@ export default {
       const scrollLeft = this.$refs.stageWrap.scrollLeft;
       const screenWidth = window.screen.width;
       const viewWidth = screenWidth / 3;
-      this.currentView = parseInt(scrollLeft / viewWidth);
-      if (this.currentView >= 3) {
-        this.currentView = 2;
+      this.currentStep = parseInt(scrollLeft / viewWidth);
+      if (this.currentStep >= 3) {
+        this.currentStep = 2;
       }
-      this.tankPosition = this.currentView * 100;
+      this.tankPosition = this.currentStep * 100;
     },
   },
 }
@@ -205,7 +205,6 @@ export default {
     &__flag {
       width: 140.8px;
       height: 229px;
-      background-image: url("@/assets/img/flag_1.png");
       background-repeat: no-repeat;
       position: absolute;
       left: 50%;
@@ -213,23 +212,6 @@ export default {
       transition: 0.5s all ease;
       &--active {
         animation: 0.5s flag 0.6s ease both;
-      }
-      @keyframes flag {
-        0% {
-          background-image: url("@/assets/img/flag_1.png");
-        }
-        25% {
-          background-image: url("@/assets/img/flag_1.png");
-        }
-        50% {
-          background-image: url("@/assets/img/flag_2.png");
-        }
-        75% {
-          background-image: url("@/assets/img/flag_3.png");
-        }
-        100% {
-          background-image: url("@/assets/img/flag_4.png");
-        }
       }
     }
     button {
