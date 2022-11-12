@@ -12,7 +12,7 @@
             <div class="stage__line"></div>
             <div
               class="stage__flag"
-              :class="{ 'stage__flag--active': currentView === 0 }"
+              :class="{ 'stage__flag--active': currentView >= 0 }"
             ></div>
           </div>
           <a href="https://2022.thef2e.com/news/week1" target="_blank">
@@ -30,7 +30,7 @@
           <div class="stage__flag-wrap">
             <div
               class="stage__flag"
-              :class="{ 'stage__flag--active': currentView === 1 }"
+              :class="{ 'stage__flag--active': currentView >= 1 }"
             ></div>
           </div>
           <a href="https://2022.thef2e.com/news/week2" target="_blank">
@@ -48,7 +48,7 @@
           <div class="stage__flag-wrap">
             <div
               class="stage__flag"
-              :class="{ 'stage__flag--active': currentView === 2 }"
+              :class="{ 'stage__flag--active': currentView >= 2 }"
             ></div>
           </div>
           <a href="https://2022.thef2e.com/news/week3" target="_blank">
@@ -205,17 +205,31 @@ export default {
     &__flag {
       width: 140.8px;
       height: 229px;
-      background-image: url("@/assets/img/flag_sprite.png");
+      background-image: url("@/assets/img/flag_1.png");
       background-repeat: no-repeat;
       position: absolute;
       left: 50%;
       transform: translateX(-50%) scale(calc(140.8 / 1920 * 10));
+      transition: 0.5s all ease;
       &--active {
-        animation: spriteFlag 1s steps(4) infinite both;
+        animation: 0.5s flag 0.6s ease both;
       }
-      @keyframes spriteFlag {
-        from { background-position: 0px; }
-        to { background-position: -563.2px; }
+      @keyframes flag {
+        0% {
+          background-image: url("@/assets/img/flag_1.png");
+        }
+        25% {
+          background-image: url("@/assets/img/flag_1.png");
+        }
+        50% {
+          background-image: url("@/assets/img/flag_2.png");
+        }
+        75% {
+          background-image: url("@/assets/img/flag_3.png");
+        }
+        100% {
+          background-image: url("@/assets/img/flag_4.png");
+        }
       }
     }
     button {
