@@ -47,7 +47,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .trouble {
     background-color: $black;
     padding-bottom: 23.43vw;

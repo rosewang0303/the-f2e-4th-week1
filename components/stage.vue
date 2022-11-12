@@ -103,7 +103,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .stage {
     &__wrap {
       display: flex;

@@ -10,6 +10,7 @@
     <!-- TODO mountain -->
     <Stage />
     <Faq />
+    <Firm />
   </div>
 </template>
 
